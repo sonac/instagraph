@@ -1,0 +1,5 @@
+[0m[[0m[31merror[0m] [0m[0m/home/sonac/git/instagraph/src/main/scala/sonac/github/io/instagraph/InstagraphRoutes.scala:43:25: not enough arguments for method user: (username: String, followersCount: Int)F[sonac.github.io.instagraph.services.Instadata.User].[0m
+[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter followersCount.[0m
+[0m[[0m[31merror[0m] [0m[0m          user <- I.user(username)[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

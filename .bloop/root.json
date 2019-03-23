@@ -1,0 +1,728 @@
+{
+    "version" : "1.1.2",
+    "project" : {
+        "name" : "root",
+        "directory" : "/home/sonac/git/instagraph",
+        "sources" : [
+            "/home/sonac/git/instagraph/src/main/scala-2.12",
+            "/home/sonac/git/instagraph/src/main/scala",
+            "/home/sonac/git/instagraph/src/main/java",
+            "/home/sonac/git/instagraph/target/scala-2.12/src_managed/main"
+        ],
+        "dependencies" : [
+        ],
+        "classpath" : [
+            "/home/sonac/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.7.jar",
+            "/home/sonac/.ivy2/cache/org.http4s/http4s-blaze-server_2.12/jars/http4s-blaze-server_2.12-0.19.0-M4.jar",
+            "/home/sonac/.ivy2/cache/org.http4s/http4s-blaze-core_2.12/jars/http4s-blaze-core_2.12-0.19.0-M4.jar",
+            "/home/sonac/.ivy2/cache/org.http4s/http4s-core_2.12/jars/http4s-core_2.12-0.19.0-M4.jar",
+            "/home/sonac/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.4.0.jar",
+            "/home/sonac/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.4.0.jar",
+            "/home/sonac/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.5.jar",
+            "/home/sonac/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.12.7.jar",
+            "/home/sonac/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.4.0.jar",
+            "/home/sonac/.ivy2/cache/org.typelevel/cats-effect_2.12/jars/cats-effect_2.12-1.0.0.jar",
+            "/home/sonac/.ivy2/cache/co.fs2/fs2-io_2.12/jars/fs2-io_2.12-1.0.0.jar",
+            "/home/sonac/.ivy2/cache/co.fs2/fs2-core_2.12/jars/fs2-core_2.12-1.0.0.jar",
+            "/home/sonac/.ivy2/cache/org.scodec/scodec-bits_2.12/bundles/scodec-bits_2.12-1.1.5.jar",
+            "/home/sonac/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.6.1.jar",
+            "/home/sonac/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar",
+            "/home/sonac/.ivy2/cache/org.http4s/parboiled_2.12/jars/parboiled_2.12-1.0.0.jar",
+            "/home/sonac/.ivy2/cache/org.http4s/blaze-http_2.12/jars/blaze-http_2.12-0.14.0-M5.jar",
+            "/home/sonac/.ivy2/cache/org.http4s/blaze-core_2.12/jars/blaze-core_2.12-0.14.0-M5.jar",
+            "/home/sonac/.ivy2/cache/com.twitter/hpack/jars/hpack-1.0.2.jar",
+            "/home/sonac/.ivy2/cache/org.eclipse.jetty.alpn/alpn-api/jars/alpn-api-1.1.3.v20160715.jar",
+            "/home/sonac/.ivy2/cache/org.http4s/http4s-server_2.12/jars/http4s-server_2.12-0.19.0-M4.jar",
+            "/home/sonac/.ivy2/cache/org.http4s/http4s-blaze-client_2.12/jars/http4s-blaze-client_2.12-0.19.0-M4.jar",
+            "/home/sonac/.ivy2/cache/org.http4s/http4s-client_2.12/jars/http4s-client_2.12-0.19.0-M4.jar",
+            "/home/sonac/.ivy2/cache/org.http4s/http4s-circe_2.12/jars/http4s-circe_2.12-0.19.0-M4.jar",
+            "/home/sonac/.ivy2/cache/org.http4s/http4s-jawn_2.12/jars/http4s-jawn_2.12-0.19.0-M4.jar",
+            "/home/sonac/.ivy2/cache/org.http4s/jawn-fs2_2.12/jars/jawn-fs2_2.12-0.13.0.jar",
+            "/home/sonac/.ivy2/cache/org.spire-math/jawn-parser_2.12/jars/jawn-parser_2.12-0.13.0.jar",
+            "/home/sonac/.ivy2/cache/io.circe/circe-jawn_2.12/jars/circe-jawn_2.12-0.10.0.jar",
+            "/home/sonac/.ivy2/cache/io.circe/circe-core_2.12/jars/circe-core_2.12-0.10.0.jar",
+            "/home/sonac/.ivy2/cache/io.circe/circe-numbers_2.12/jars/circe-numbers_2.12-0.10.0.jar",
+            "/home/sonac/.ivy2/cache/org.http4s/http4s-dsl_2.12/jars/http4s-dsl_2.12-0.19.0-M4.jar",
+            "/home/sonac/.ivy2/cache/io.circe/circe-generic_2.12/jars/circe-generic_2.12-0.10.0.jar",
+            "/home/sonac/.ivy2/cache/com.chuusai/shapeless_2.12/bundles/shapeless_2.12-2.3.3.jar",
+            "/home/sonac/.ivy2/cache/org.typelevel/macro-compat_2.12/jars/macro-compat_2.12-1.1.1.jar",
+            "/home/sonac/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar",
+            "/home/sonac/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar"
+        ],
+        "out" : "/home/sonac/git/instagraph/.bloop/root",
+        "classesDir" : "/home/sonac/git/instagraph/.bloop/root/scala-2.12/classes",
+        "resources" : [
+            "/home/sonac/git/instagraph/src/main/resources",
+            "/home/sonac/git/instagraph/target/scala-2.12/resource_managed/main"
+        ],
+        "scala" : {
+            "organization" : "org.scala-lang",
+            "name" : "scala-compiler",
+            "version" : "2.12.7",
+            "options" : [
+                "-Ypartial-unification",
+                "-deprecation",
+                "-encoding",
+                "UTF-8",
+                "-language:higherKinds",
+                "-language:postfixOps",
+                "-feature",
+                "-Ypartial-unification",
+                "-P:semanticdb:synthetics:on",
+                "-P:semanticdb:failures:warning",
+                "-P:semanticdb:sourceroot:/home/sonac/git/instagraph",
+                "-Yrangepos",
+                "-Xplugin-require:semanticdb",
+                "-Xplugin:/home/sonac/.ivy2/cache/org.spire-math/kind-projector_2.12/jars/kind-projector_2.12-0.9.6.jar",
+                "-Xplugin:/home/sonac/.ivy2/cache/com.olegpy/better-monadic-for_2.12/jars/better-monadic-for_2.12-0.2.4.jar",
+                "-Xplugin:/home/sonac/.ivy2/cache/org.scalameta/semanticdb-scalac_2.12.7/jars/semanticdb-scalac_2.12.7-4.1.4.jar"
+            ],
+            "jars" : [
+                "/home/sonac/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.12.7.jar",
+                "/home/sonac/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.7.jar",
+                "/home/sonac/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.12.7.jar",
+                "/home/sonac/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.6.jar",
+                "/home/sonac/.ivy2/cache/jline/jline/jars/jline-2.14.6.jar"
+            ],
+            "setup" : {
+                "order" : "mixed",
+                "addLibraryToBootClasspath" : true,
+                "addCompilerToClasspath" : false,
+                "addExtraJarsToClasspath" : false,
+                "manageBootClasspath" : true,
+                "filterLibraryFromClasspath" : true
+            }
+        },
+        "java" : {
+            "options" : [
+            ]
+        },
+        "test" : {
+            "frameworks" : [
+                {
+                    "names" : [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names" : [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names" : [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names" : [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names" : [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                }
+            ],
+            "options" : {
+                "excludes" : [
+                ],
+                "arguments" : [
+                ]
+            }
+        },
+        "platform" : {
+            "name" : "jvm",
+            "config" : {
+                "home" : "/usr/lib/jvm/java-8-openjdk-amd64/jre",
+                "options" : [
+                ]
+            },
+            "mainClass" : [
+            ]
+        },
+        "resolution" : {
+            "modules" : [
+                {
+                    "organization" : "org.scala-lang",
+                    "name" : "scala-library",
+                    "version" : "2.12.7",
+                    "artifacts" : [
+                        {
+                            "name" : "scala-library",
+                            "path" : "/home/sonac/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.7.jar"
+                        },
+                        {
+                            "name" : "scala-library",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.7-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.http4s",
+                    "name" : "http4s-blaze-server_2.12",
+                    "version" : "0.19.0-M4",
+                    "artifacts" : [
+                        {
+                            "name" : "http4s-blaze-server_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-blaze-server_2.12/jars/http4s-blaze-server_2.12-0.19.0-M4.jar"
+                        },
+                        {
+                            "name" : "http4s-blaze-server_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-blaze-server_2.12/srcs/http4s-blaze-server_2.12-0.19.0-M4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.http4s",
+                    "name" : "http4s-blaze-core_2.12",
+                    "version" : "0.19.0-M4",
+                    "artifacts" : [
+                        {
+                            "name" : "http4s-blaze-core_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-blaze-core_2.12/jars/http4s-blaze-core_2.12-0.19.0-M4.jar"
+                        },
+                        {
+                            "name" : "http4s-blaze-core_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-blaze-core_2.12/srcs/http4s-blaze-core_2.12-0.19.0-M4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.http4s",
+                    "name" : "http4s-core_2.12",
+                    "version" : "0.19.0-M4",
+                    "artifacts" : [
+                        {
+                            "name" : "http4s-core_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-core_2.12/jars/http4s-core_2.12-0.19.0-M4.jar"
+                        },
+                        {
+                            "name" : "http4s-core_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-core_2.12/srcs/http4s-core_2.12-0.19.0-M4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.typelevel",
+                    "name" : "cats-core_2.12",
+                    "version" : "1.4.0",
+                    "artifacts" : [
+                        {
+                            "name" : "cats-core_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.4.0.jar"
+                        },
+                        {
+                            "name" : "cats-core_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.typelevel/cats-core_2.12/srcs/cats-core_2.12-1.4.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.typelevel",
+                    "name" : "cats-macros_2.12",
+                    "version" : "1.4.0",
+                    "artifacts" : [
+                        {
+                            "name" : "cats-macros_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.4.0.jar"
+                        },
+                        {
+                            "name" : "cats-macros_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.typelevel/cats-macros_2.12/srcs/cats-macros_2.12-1.4.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.typelevel",
+                    "name" : "machinist_2.12",
+                    "version" : "0.6.5",
+                    "artifacts" : [
+                        {
+                            "name" : "machinist_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.5.jar"
+                        },
+                        {
+                            "name" : "machinist_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.typelevel/machinist_2.12/srcs/machinist_2.12-0.6.5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.scala-lang",
+                    "name" : "scala-reflect",
+                    "version" : "2.12.7",
+                    "artifacts" : [
+                        {
+                            "name" : "scala-reflect",
+                            "path" : "/home/sonac/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.12.7.jar"
+                        },
+                        {
+                            "name" : "scala-reflect",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.12.7-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.typelevel",
+                    "name" : "cats-kernel_2.12",
+                    "version" : "1.4.0",
+                    "artifacts" : [
+                        {
+                            "name" : "cats-kernel_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.4.0.jar"
+                        },
+                        {
+                            "name" : "cats-kernel_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.typelevel/cats-kernel_2.12/srcs/cats-kernel_2.12-1.4.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.typelevel",
+                    "name" : "cats-effect_2.12",
+                    "version" : "1.0.0",
+                    "artifacts" : [
+                        {
+                            "name" : "cats-effect_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.typelevel/cats-effect_2.12/jars/cats-effect_2.12-1.0.0.jar"
+                        },
+                        {
+                            "name" : "cats-effect_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.typelevel/cats-effect_2.12/srcs/cats-effect_2.12-1.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "co.fs2",
+                    "name" : "fs2-io_2.12",
+                    "version" : "1.0.0",
+                    "artifacts" : [
+                        {
+                            "name" : "fs2-io_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/co.fs2/fs2-io_2.12/jars/fs2-io_2.12-1.0.0.jar"
+                        },
+                        {
+                            "name" : "fs2-io_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/co.fs2/fs2-io_2.12/srcs/fs2-io_2.12-1.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "co.fs2",
+                    "name" : "fs2-core_2.12",
+                    "version" : "1.0.0",
+                    "artifacts" : [
+                        {
+                            "name" : "fs2-core_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/co.fs2/fs2-core_2.12/jars/fs2-core_2.12-1.0.0.jar"
+                        },
+                        {
+                            "name" : "fs2-core_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/co.fs2/fs2-core_2.12/srcs/fs2-core_2.12-1.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.scodec",
+                    "name" : "scodec-bits_2.12",
+                    "version" : "1.1.5",
+                    "artifacts" : [
+                        {
+                            "name" : "scodec-bits_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.scodec/scodec-bits_2.12/bundles/scodec-bits_2.12-1.1.5.jar"
+                        },
+                        {
+                            "name" : "scodec-bits_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.scodec/scodec-bits_2.12/srcs/scodec-bits_2.12-1.1.5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.log4s",
+                    "name" : "log4s_2.12",
+                    "version" : "1.6.1",
+                    "artifacts" : [
+                        {
+                            "name" : "log4s_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.6.1.jar"
+                        },
+                        {
+                            "name" : "log4s_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.log4s/log4s_2.12/srcs/log4s_2.12-1.6.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.slf4j",
+                    "name" : "slf4j-api",
+                    "version" : "1.7.25",
+                    "artifacts" : [
+                        {
+                            "name" : "slf4j-api",
+                            "path" : "/home/sonac/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar"
+                        },
+                        {
+                            "name" : "slf4j-api",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.slf4j/slf4j-api/srcs/slf4j-api-1.7.25-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.http4s",
+                    "name" : "parboiled_2.12",
+                    "version" : "1.0.0",
+                    "artifacts" : [
+                        {
+                            "name" : "parboiled_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/parboiled_2.12/jars/parboiled_2.12-1.0.0.jar"
+                        },
+                        {
+                            "name" : "parboiled_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/parboiled_2.12/srcs/parboiled_2.12-1.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.http4s",
+                    "name" : "blaze-http_2.12",
+                    "version" : "0.14.0-M5",
+                    "artifacts" : [
+                        {
+                            "name" : "blaze-http_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/blaze-http_2.12/jars/blaze-http_2.12-0.14.0-M5.jar"
+                        },
+                        {
+                            "name" : "blaze-http_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/blaze-http_2.12/srcs/blaze-http_2.12-0.14.0-M5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.http4s",
+                    "name" : "blaze-core_2.12",
+                    "version" : "0.14.0-M5",
+                    "artifacts" : [
+                        {
+                            "name" : "blaze-core_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/blaze-core_2.12/jars/blaze-core_2.12-0.14.0-M5.jar"
+                        },
+                        {
+                            "name" : "blaze-core_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/blaze-core_2.12/srcs/blaze-core_2.12-0.14.0-M5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "com.twitter",
+                    "name" : "hpack",
+                    "version" : "1.0.2",
+                    "artifacts" : [
+                        {
+                            "name" : "hpack",
+                            "path" : "/home/sonac/.ivy2/cache/com.twitter/hpack/jars/hpack-1.0.2.jar"
+                        },
+                        {
+                            "name" : "hpack",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/com.twitter/hpack/srcs/hpack-1.0.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.eclipse.jetty.alpn",
+                    "name" : "alpn-api",
+                    "version" : "1.1.3.v20160715",
+                    "artifacts" : [
+                        {
+                            "name" : "alpn-api",
+                            "path" : "/home/sonac/.ivy2/cache/org.eclipse.jetty.alpn/alpn-api/jars/alpn-api-1.1.3.v20160715.jar"
+                        },
+                        {
+                            "name" : "alpn-api",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.eclipse.jetty.alpn/alpn-api/srcs/alpn-api-1.1.3.v20160715-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.http4s",
+                    "name" : "http4s-server_2.12",
+                    "version" : "0.19.0-M4",
+                    "artifacts" : [
+                        {
+                            "name" : "http4s-server_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-server_2.12/jars/http4s-server_2.12-0.19.0-M4.jar"
+                        },
+                        {
+                            "name" : "http4s-server_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-server_2.12/srcs/http4s-server_2.12-0.19.0-M4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.http4s",
+                    "name" : "http4s-blaze-client_2.12",
+                    "version" : "0.19.0-M4",
+                    "artifacts" : [
+                        {
+                            "name" : "http4s-blaze-client_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-blaze-client_2.12/jars/http4s-blaze-client_2.12-0.19.0-M4.jar"
+                        },
+                        {
+                            "name" : "http4s-blaze-client_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-blaze-client_2.12/srcs/http4s-blaze-client_2.12-0.19.0-M4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.http4s",
+                    "name" : "http4s-client_2.12",
+                    "version" : "0.19.0-M4",
+                    "artifacts" : [
+                        {
+                            "name" : "http4s-client_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-client_2.12/jars/http4s-client_2.12-0.19.0-M4.jar"
+                        },
+                        {
+                            "name" : "http4s-client_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-client_2.12/srcs/http4s-client_2.12-0.19.0-M4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.http4s",
+                    "name" : "http4s-circe_2.12",
+                    "version" : "0.19.0-M4",
+                    "artifacts" : [
+                        {
+                            "name" : "http4s-circe_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-circe_2.12/jars/http4s-circe_2.12-0.19.0-M4.jar"
+                        },
+                        {
+                            "name" : "http4s-circe_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-circe_2.12/srcs/http4s-circe_2.12-0.19.0-M4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.http4s",
+                    "name" : "http4s-jawn_2.12",
+                    "version" : "0.19.0-M4",
+                    "artifacts" : [
+                        {
+                            "name" : "http4s-jawn_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-jawn_2.12/jars/http4s-jawn_2.12-0.19.0-M4.jar"
+                        },
+                        {
+                            "name" : "http4s-jawn_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-jawn_2.12/srcs/http4s-jawn_2.12-0.19.0-M4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.http4s",
+                    "name" : "jawn-fs2_2.12",
+                    "version" : "0.13.0",
+                    "artifacts" : [
+                        {
+                            "name" : "jawn-fs2_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/jawn-fs2_2.12/jars/jawn-fs2_2.12-0.13.0.jar"
+                        },
+                        {
+                            "name" : "jawn-fs2_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/jawn-fs2_2.12/srcs/jawn-fs2_2.12-0.13.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.spire-math",
+                    "name" : "jawn-parser_2.12",
+                    "version" : "0.13.0",
+                    "artifacts" : [
+                        {
+                            "name" : "jawn-parser_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.spire-math/jawn-parser_2.12/jars/jawn-parser_2.12-0.13.0.jar"
+                        },
+                        {
+                            "name" : "jawn-parser_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.spire-math/jawn-parser_2.12/srcs/jawn-parser_2.12-0.13.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "io.circe",
+                    "name" : "circe-jawn_2.12",
+                    "version" : "0.10.0",
+                    "artifacts" : [
+                        {
+                            "name" : "circe-jawn_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/io.circe/circe-jawn_2.12/jars/circe-jawn_2.12-0.10.0.jar"
+                        },
+                        {
+                            "name" : "circe-jawn_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/io.circe/circe-jawn_2.12/srcs/circe-jawn_2.12-0.10.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "io.circe",
+                    "name" : "circe-core_2.12",
+                    "version" : "0.10.0",
+                    "artifacts" : [
+                        {
+                            "name" : "circe-core_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/io.circe/circe-core_2.12/jars/circe-core_2.12-0.10.0.jar"
+                        },
+                        {
+                            "name" : "circe-core_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/io.circe/circe-core_2.12/srcs/circe-core_2.12-0.10.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "io.circe",
+                    "name" : "circe-numbers_2.12",
+                    "version" : "0.10.0",
+                    "artifacts" : [
+                        {
+                            "name" : "circe-numbers_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/io.circe/circe-numbers_2.12/jars/circe-numbers_2.12-0.10.0.jar"
+                        },
+                        {
+                            "name" : "circe-numbers_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/io.circe/circe-numbers_2.12/srcs/circe-numbers_2.12-0.10.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.http4s",
+                    "name" : "http4s-dsl_2.12",
+                    "version" : "0.19.0-M4",
+                    "artifacts" : [
+                        {
+                            "name" : "http4s-dsl_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-dsl_2.12/jars/http4s-dsl_2.12-0.19.0-M4.jar"
+                        },
+                        {
+                            "name" : "http4s-dsl_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.http4s/http4s-dsl_2.12/srcs/http4s-dsl_2.12-0.19.0-M4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "io.circe",
+                    "name" : "circe-generic_2.12",
+                    "version" : "0.10.0",
+                    "artifacts" : [
+                        {
+                            "name" : "circe-generic_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/io.circe/circe-generic_2.12/jars/circe-generic_2.12-0.10.0.jar"
+                        },
+                        {
+                            "name" : "circe-generic_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/io.circe/circe-generic_2.12/srcs/circe-generic_2.12-0.10.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "com.chuusai",
+                    "name" : "shapeless_2.12",
+                    "version" : "2.3.3",
+                    "artifacts" : [
+                        {
+                            "name" : "shapeless_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/com.chuusai/shapeless_2.12/bundles/shapeless_2.12-2.3.3.jar"
+                        },
+                        {
+                            "name" : "shapeless_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/com.chuusai/shapeless_2.12/srcs/shapeless_2.12-2.3.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.typelevel",
+                    "name" : "macro-compat_2.12",
+                    "version" : "1.1.1",
+                    "artifacts" : [
+                        {
+                            "name" : "macro-compat_2.12",
+                            "path" : "/home/sonac/.ivy2/cache/org.typelevel/macro-compat_2.12/jars/macro-compat_2.12-1.1.1.jar"
+                        },
+                        {
+                            "name" : "macro-compat_2.12",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/org.typelevel/macro-compat_2.12/srcs/macro-compat_2.12-1.1.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "ch.qos.logback",
+                    "name" : "logback-classic",
+                    "version" : "1.2.3",
+                    "artifacts" : [
+                        {
+                            "name" : "logback-classic",
+                            "path" : "/home/sonac/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar"
+                        },
+                        {
+                            "name" : "logback-classic",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/ch.qos.logback/logback-classic/srcs/logback-classic-1.2.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "ch.qos.logback",
+                    "name" : "logback-core",
+                    "version" : "1.2.3",
+                    "artifacts" : [
+                        {
+                            "name" : "logback-core",
+                            "path" : "/home/sonac/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar"
+                        },
+                        {
+                            "name" : "logback-core",
+                            "classifier" : "sources",
+                            "path" : "/home/sonac/.ivy2/cache/ch.qos.logback/logback-core/srcs/logback-core-1.2.3-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

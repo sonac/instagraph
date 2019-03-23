@@ -1,0 +1,8 @@
+run
+sbt clean
+c;ean
+clean
+run
+~reStart
+compile
+~reStart
