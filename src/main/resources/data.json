@@ -1,0 +1,26 @@
+{
+    "fibs": {
+        "first": "1",
+        "second": "1",
+        "third": "2",
+        "fourth": "3",
+        "fifth": "5",
+        "sixth": "8",
+        "seventh": "13",
+        "eighth": "21",
+        "ninth": "34",
+        "tenth": "55"
+    },
+    "nonfibs": {
+        "first": "1",
+        "second": "2",
+        "third": "3",
+        "fourth": "4",
+        "fifth": "5",
+        "sixth": "6",
+        "seventh": "7",
+        "eighth": "8",
+        "ninth": "9",
+        "tenth": "10"
+    }
+}

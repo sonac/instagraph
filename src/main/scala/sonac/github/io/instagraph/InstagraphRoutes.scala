@@ -43,6 +43,11 @@ object InstagraphRoutes {
           user <- I.user(username)
           resp <- Ok(user)
         } yield resp
+      case GET -> Root / "followers" / username =>
+        for {
+          users <- I.getFollowers(username)
+          resp <- Ok(users)
+        } yield resp
     }
   }
 
