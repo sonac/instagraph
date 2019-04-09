@@ -1,5 +1,6 @@
 package sonac.github.io.instagraph
 
+import scala.concurrent.ExecutionContext.global
 
 import cats.effect.{ConcurrentEffect, Effect, ExitCode, IO, IOApp, Timer, ContextShift}
 import cats.implicits._
@@ -7,8 +8,9 @@ import org.http4s.server.blaze.BlazeServerBuilder
 import org.http4s.client.blaze.BlazeClientBuilder
 import org.http4s.implicits._
 import fs2.Stream
-import scala.concurrent.ExecutionContext.global
+
 import sonac.github.io.instagraph.services._
+import sonac.github.io.instagraph.config.ServerConfig
 
 import org.http4s.server.middleware.Logger
 

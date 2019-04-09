@@ -1,3 +1,5 @@
+import Dependencies._
+
 val Http4sVersion = "0.19.0-M4"
 val CirceVersion = "0.10.0"
 val Specs2Version = "4.2.0"
@@ -10,16 +12,7 @@ lazy val root = (project in file("."))
     version := "0.0.1-SNAPSHOT",
     scalaVersion := "2.12.7",
     scalacOptions ++= Seq("-Ypartial-unification"),
-    libraryDependencies ++= Seq(
-      "org.http4s"      %% "http4s-blaze-server" % Http4sVersion,
-      "org.http4s"      %% "http4s-blaze-client" % Http4sVersion,
-      "org.http4s"      %% "http4s-circe"        % Http4sVersion,
-      "org.http4s"      %% "http4s-dsl"          % Http4sVersion,
-      "io.circe"        %% "circe-generic"       % CirceVersion,
-      "io.circe"        %% "circe-parser"        % CirceVersion,
-      "org.specs2"      %% "specs2-core"         % Specs2Version % "test",
-      "ch.qos.logback"  %  "logback-classic"     % LogbackVersion
-    ),
+    libraryDependencies ++= dependencies,
     addCompilerPlugin("org.spire-math" %% "kind-projector"     % "0.9.6"),
     addCompilerPlugin("com.olegpy"     %% "better-monadic-for" % "0.2.4")
   )
