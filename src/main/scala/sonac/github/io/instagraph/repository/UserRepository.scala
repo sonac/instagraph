@@ -1,54 +1,58 @@
 package sonac.github.io.instagraph.repository
 
-import cats.effect.IO
+import cats.effect.{IO, Sync}
 import fs2.Stream
 import doobie.util.transactor.Transactor
 import doobie._
 import doobie.implicits._
 import sonac.github.io.instagraph.model.{User, UserNotFoundError}
 
-class UserRepository(transactor: Transactor[IO]) {
+class UserRepository[F[_]: Sync](transactor: Transactor[F]) extends InstaRepository[F] {
 
-  def getUsers: Stream[IO, User] = {
-    sql"select id, followers, photo_link from rave.users".query[User].stream.transact(transactor)
+  implicit val han: LogHandler = LogHandler.jdkLogHandler
+
+  def getUsers: F[Seq[User]] = {
+    sql"select id, followers, photo_link from rave.users"
+      .query[User]
+      .to[Seq]
+      .transact(transactor)
   }
 
-  def getUser(id: Int): IO[Either[UserNotFoundError.type, User]] = {
+  def getUser(id: Int): F[Either[UserNotFoundError.type, User]] = {
     sql"select id, followers, photo_link from rave.users where id = $id".query[User]
       .option
-      .transact(transactor)
       .map {
         case Some(user) => Right(user)
         case None => Left(UserNotFoundError)
       }
+      .transact(transactor)
   }
 
-  def createUser(user: User): IO[User] = {
+  def createUser(user: User): F[User] = {
     sql"""insert into rave.users (followers, photo_link) values (
       ${user.followers}, ${user.photoLink})"""
       .update
       .withUniqueGeneratedKeys[Int]("id")
-      .transact(transactor)
       .map { id =>
         user.copy(id = id)
       }
+      .transact(transactor)
   }
 
-  def deleteUser(id: Int): IO[Either[UserNotFoundError.type, Unit]] = {
-    sql"delete from rave.users where id = $id".update.run.transact(transactor).map { affectedRows =>
+  def deleteUser(id: Int): F[Either[UserNotFoundError.type, Unit]] = {
+    sql"delete from rave.users where id = $id".update.run.map { affectedRows =>
       if (affectedRows == 1) {
         Right()
       } else {
         Left(UserNotFoundError)
       }
-    }
+    }.transact(transactor)
   }
 
-  def updateUser(user: User): IO[Either[UserNotFoundError.type, User]] = {
+  def updateUser(user: User): F[Either[UserNotFoundError.type, User]] = {
     sql"update users set followers = ${user.followers}, photo_link = ${user.photoLink} where id = ${user.id}"
       .update
       .run
-      .transact(transactor)
       .map { affectedRows =>
         if (affectedRows == 1) {
           Right(user)
@@ -56,6 +60,7 @@ class UserRepository(transactor: Transactor[IO]) {
           Left(UserNotFoundError)
         }
       }
+      .transact(transactor)
   }
 
 }

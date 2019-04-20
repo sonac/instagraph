@@ -1,46 +1,37 @@
 package sonac.github.io.instagraph
 
-import scala.concurrent.ExecutionContext.global
-
-import cats.effect.{ConcurrentEffect, Effect, ExitCode, IO, IOApp, Timer, ContextShift}
+import cats.Applicative
+import cats.effect._
 import cats.implicits._
-import org.http4s.server.blaze.BlazeServerBuilder
-import org.http4s.client.blaze.BlazeClientBuilder
-import org.http4s.implicits._
+import org.http4s.HttpRoutes
+import org.http4s.syntax._
+import org.http4s.dsl.io._
+import org.http4s.server.blaze._
 import fs2.Stream
+import config.Config
+import sonac.github.io.instagraph.db.Database
+import sonac.github.io.instagraph.repository.UserRepository
+import sonac.github.io.instagraph.services.InstaService
 
-import sonac.github.io.instagraph.services._
-import sonac.github.io.instagraph.config.ServerConfig
+object InstagraphServer extends IOApp {
 
-import org.http4s.server.middleware.Logger
+  def stream: Stream[IO, ExitCode] = {
 
-object InstagraphServer {
 
-  def stream[F[_]: ConcurrentEffect](implicit T: Timer[F], C: ContextShift[F]): Stream[F, Nothing] = {
     for {
-      client <- BlazeClientBuilder[F](global).stream
-      helloWorldAlg = HelloWorld.impl[F]
-      jokeAlg = Jokes.impl[F](client)
-      instaAlg = Instadata.impl[F]
-
-      // Combine Service Routes into an HttpApp
-      // Can also be done via a Router if you
-      // want to extract a segments not checked
-      // in the underlying routes.
-      httpApp = (
-        InstagraphRoutes.helloWorldRoutes[F](helloWorldAlg) <+>
-        InstagraphRoutes.jokeRoutes[F](jokeAlg) <+>
-        InstagraphRoutes.instaRoutes[F](instaAlg)
-      ).orNotFound
-
-      // With Middlewares in place
-      finalHttpApp = Logger(true, true)(httpApp)
-
-
-      exitCode <- BlazeServerBuilder[F]
+      config <- Stream.eval(Config.load())
+      transactor <- Stream.eval(Database.transactor(config.database))
+      _ <- Stream.eval(Database.initialize(transactor))
+      exitCode <- BlazeServerBuilder[IO]
         .bindHttp(8080, "0.0.0.0")
-        .withHttpApp(finalHttpApp)
+        .withHttpApp(new InstaService(new UserRepository(transactor)).service)
         .serve
     } yield exitCode
-  }.drain
+
+
+  }
+
+  def run(args: List[String]): IO[ExitCode] = {
+    stream.compile.drain.as(ExitCode.Success)
+  }
 }

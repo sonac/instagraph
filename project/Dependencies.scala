@@ -2,7 +2,7 @@ import sbt._
 
 object Dependencies {
 
-  lazy val Http4sVersion = "0.19.0-M4"
+  lazy val Http4sVersion = "0.20.0-RC1"
   lazy val CirceVersion = "0.10.0"
   lazy val Specs2Version = "4.2.0"
   lazy val LogbackVersion = "1.2.3"
