@@ -2,6 +2,7 @@ create schema rave;
 
 create table rave.users (
 	    id serial primary key,
+	    username varchar(256),
 	    followers int,
 		photo_link varchar(2048)
 );
@@ -11,23 +12,27 @@ create table rave.user_followers (
 	follower_id int
 );
 
-insert into rave.users (id, followers, photo_link)
+insert into rave.users (id, username, followers, photo_link)
 values (1,
+        'donny',
 		129,
 		'https://instagram.ftxl3-1.fna.fbcdn.net/vp/3889dabfea62fb3ff61b1d606e5a353a/5D31BCAF/t51.2885-19/s150x150/11191309_1674877519414943_649792557_a.jpg?_nc_ht=instagram.ftxl3-1.fna.fbcdn.net'
 		);
-insert into rave.users (id, followers, photo_link)
+insert into rave.users (id, username, followers, photo_link)
 values (2,
+        'charlie',
 		129,
 		'https://instagram.ftxl3-1.fna.fbcdn.net/vp/dc1dac7b49be919ed2997f8381e153d5/5D4B36D2/t51.2885-19/s150x150/40424285_277442789539909_2685725990302253056_n.jpg?_nc_ht=instagram.ftxl3-1.fna.fbcdn.net'
 		);
-insert into rave.users (id, followers, photo_link)
+insert into rave.users (id, username, followers, photo_link)
 values (3,
+        'lorie',
 		129,
 		'https://instagram.ftxl3-1.fna.fbcdn.net/vp/d15c7d9017e1c226a4968dc0e97b29e7/5D4612B8/t51.2885-19/s150x150/43915506_353241822101684_4865047148535742464_n.jpg?_nc_ht=instagram.ftxl3-1.fna.fbcdn.net'
 		);
-insert into rave.users (id, followers, photo_link)
+insert into rave.users (id, username, followers, photo_link)
 values (4,
+        'debbie',
 		129,
 		'https://instagram.ftxl3-1.fna.fbcdn.net/vp/c9aa95c51e1fd1cc992031ddfa321eec/5D40A44B/t51.2885-19/s150x150/54731637_402048060584784_409742719011782656_n.jpg?_nc_ht=instagram.ftxl3-1.fna.fbcdn.net'
 		);

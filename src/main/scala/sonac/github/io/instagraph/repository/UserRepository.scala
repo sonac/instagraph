@@ -12,19 +12,15 @@ class UserRepository[F[_]: Sync](transactor: Transactor[F]) extends InstaReposit
   implicit val han: LogHandler = LogHandler.jdkLogHandler
 
   def getUsers: F[Seq[User]] = {
-    sql"select id, followers, photo_link from rave.users"
+    sql"select username, followers, photo_link from rave.users"
       .query[User]
       .to[Seq]
       .transact(transactor)
   }
 
-  def getUser(id: Int): F[Either[UserNotFoundError.type, User]] = {
-    sql"select id, followers, photo_link from rave.users where id = $id".query[User]
+  def getUser(id: Int): F[Option[User]] = {
+    sql"select username, followers, photo_link from rave.users where id = $id".query[User]
       .option
-      .map {
-        case Some(user) => Right(user)
-        case None => Left(UserNotFoundError)
-      }
       .transact(transactor)
   }
 

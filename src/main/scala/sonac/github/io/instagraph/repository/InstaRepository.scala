@@ -2,8 +2,12 @@ package sonac.github.io.instagraph.repository
 
 import cats.effect.IO
 import fs2.Stream
-import sonac.github.io.instagraph.model.User
+import sonac.github.io.instagraph.model.{User, UserNotFoundError}
 
 trait InstaRepository[F[_]] {
   def getUsers: F[Seq[User]]
+  def getUser(id: Int): F[Option[User]]
+  def createUser(user: User): F[User]
+  def deleteUser(id: Int): F[Either[UserNotFoundError.type, Unit]]
+  def updateUser(user: User): F[Either[UserNotFoundError.type, User]]
 }
