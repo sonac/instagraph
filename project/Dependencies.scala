@@ -16,6 +16,7 @@ object Dependencies {
   lazy val http4sDsl: ModuleID = "org.http4s" %% "http4s-dsl" % Http4sVersion
   lazy val circeGeneric: ModuleID = "io.circe" %% "circe-generic" % CirceVersion
   lazy val circeParser: ModuleID = "io.circe" %% "circe-parser" % CirceVersion
+  lazy val circeLiteral: ModuleID = "io.circe" %% "circe-literal" % CirceVersion
   lazy val specsCore: ModuleID = "org.specs2" %% "specs2-core" % Specs2Version % "test"
   lazy val logback: ModuleID = "ch.qos.logback" % "logback-classic" % LogbackVersion
   lazy val pureConfig: ModuleID = "com.github.pureconfig" %% "pureconfig" % PureConfigVersion
@@ -31,6 +32,7 @@ object Dependencies {
     http4sDsl,
     circeGeneric,
     circeParser,
+    circeLiteral,
     specsCore,
     logback,
     pureConfig,

@@ -7,11 +7,11 @@ import org.http4s.{EntityDecoder, HttpRoutes, Request, Response}
 import org.http4s.circe._
 import io.circe.generic.auto._
 import io.circe.syntax._
-
-import sonac.github.io.instagraph.model.User
+import org.http4s.client.Client
+import sonac.github.io.instagraph.model.{User, UserError}
 import sonac.github.io.instagraph.repository.InstaRepository
 
-class InstaService(repository: InstaRepository[IO]) extends Http4sDsl[IO] {
+class InstaService(repository: InstaRepository[IO], client: Client[IO]) extends Http4sDsl[IO] {
   import org.http4s.implicits._
 
   implicit val decoder: EntityDecoder[IO, User] = jsonOf[IO, User]
@@ -24,8 +24,16 @@ class InstaService(repository: InstaRepository[IO]) extends Http4sDsl[IO] {
     case req @ POST -> Root / "api" / "add-user" =>
       for {
         user <- req.as[User]
-        resp <- Ok(repository.createUser(user).map(_.asJson.noSpaces))
+        res <- repository.createUser(user)
+        resp <- userResult(res)
       } yield resp
   }.orNotFound
+
+  private def userResult(res: Either[UserError, User]) = {
+    res match {
+      case Left(err) => BadRequest(err.error)
+      case Right(user) => Ok(user.asJson)
+    }
+  }
 
 }

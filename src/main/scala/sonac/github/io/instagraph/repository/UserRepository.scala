@@ -5,7 +5,8 @@ import fs2.Stream
 import doobie.util.transactor.Transactor
 import doobie._
 import doobie.implicits._
-import sonac.github.io.instagraph.model.{User, UserNotFoundError}
+import doobie.postgres.sqlstate
+import sonac.github.io.instagraph.model.{User, UserAlreadyExistsError, UserNotFoundError}
 
 class UserRepository[F[_]: Sync](transactor: Transactor[F]) extends InstaRepository[F] {
 
@@ -24,15 +25,15 @@ class UserRepository[F[_]: Sync](transactor: Transactor[F]) extends InstaReposit
       .transact(transactor)
   }
 
-  def createUser(user: User): F[User] = {
-    sql"""insert into rave.users (followers, photo_link) values (
-      ${user.followers}, ${user.photoLink})"""
+  def createUser(user: User): F[Either[UserAlreadyExistsError.type, User]] = {
+    sql"""insert into rave.users (username, followers, photo_link) values (
+      ${user.username}, ${user.followers}, ${user.photoLink})"""
       .update
-      .withUniqueGeneratedKeys[Int]("id")
-      .map { id =>
-        user.copy(id = id)
-      }
+      .withUniqueGeneratedKeys[User]("username", "followers", "photo_link")
       .transact(transactor)
+      .attemptSomeSqlState {
+        case sqlstate.class23.UNIQUE_VIOLATION => UserAlreadyExistsError
+      }
   }
 
   def deleteUser(id: Int): F[Either[UserNotFoundError.type, Unit]] = {
@@ -46,7 +47,8 @@ class UserRepository[F[_]: Sync](transactor: Transactor[F]) extends InstaReposit
   }
 
   def updateUser(user: User): F[Either[UserNotFoundError.type, User]] = {
-    sql"update users set followers = ${user.followers}, photo_link = ${user.photoLink} where id = ${user.id}"
+    sql"""update users set followers = ${user.followers}, photo_link = ${user.photoLink}
+    where username = ${user.username}"""
       .update
       .run
       .map { affectedRows =>
