@@ -27,6 +27,10 @@ class InstaService(repository: InstaRepository[IO], client: Client[IO]) extends 
         res <- repository.createUser(user)
         resp <- userResult(res)
       } yield resp
+    case GET -> Root / "api" / "parse" =>
+      Ok(
+        new Instaparse(client).parseFollowers("andreysumko")
+      )
   }.orNotFound
 
   private def userResult(res: Either[UserError, User]) = {

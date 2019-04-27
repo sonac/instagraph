@@ -15,6 +15,7 @@ import sonac.github.io.instagraph.repository.UserRepository
 import sonac.github.io.instagraph.services.InstaService
 
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.duration._
 
 object InstagraphServer extends IOApp {
 
@@ -22,7 +23,9 @@ object InstagraphServer extends IOApp {
 
 
     for {
-      client <- BlazeClientBuilder[IO](global).stream
+      client <- BlazeClientBuilder[IO](global)
+        .withResponseHeaderTimeout(Duration(100000, SECONDS))
+        .stream
       config <- Stream.eval(Config.load())
       transactor <- Stream.eval(Database.transactor(config.database))
       _ <- Stream.eval(Database.initialize(transactor))
